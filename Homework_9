@@ -1,0 +1,45 @@
+# Իրականացնել ռեկուրսիվ ֆունկցիա, որը կհաշվարկի փոխանցված ամբողջ թվի ֆակտորիալը։ Նաև պետք է ստուգել՝
+# արդյոք փոխանցված արգումենտը հանդիսանում է ամբողջ թիվ, թե ոչ։
+
+
+def factorial(int_num):
+    if type(int_num) == type(int()) and int_num >= 0:
+        if int_num == 0:
+            return 1
+        return int_num * factorial(int_num -1)
+    else:
+        return "You must enter positive integer."
+
+
+# enumerate ներկառուցված մեթոդը ավելացնում է հաշվիչ (counter) իտերացվող օբյեկտի վրա և
+# վերադարձնում է enumerate օբյեկտ, որն է իր հերթին հնարավոր է ներկայացնել list-ի տեսքով։ Իրականացնել
+# պարզագույն enumerate ֆունկցիա, որն առաջին արգումենտով կստանա իտերացվող օբյեկտը (պետք է ստուգում կատարել՝
+# արդյոք փոխանցված օբյեկտը իտերացվող է), իսկ երկրորդ արգումենտով start, որն էլ նշանակում է հաշվարկի սկիզբը
+# (default 0 է վերագրված)։Վերադարձվող օբյեկտը կարող է լինել tuple-ների list։
+from collections.abc import Iterable
+def enumerate(iter_obg, start = 0):
+    if isinstance(iter_obg, Iterable):
+        res = [(start + i, iter_obg[i]) for i in range(len(iter_obg))]
+        return res
+    return "The argument is not iterable."
+
+
+# Իրականացնել ֆունկցիա, որը որպես արգումենտ կստանա ամբողջ թիվ և կվերադարձնի True, եթե այդ թիվը չորսի աստիճան է
+# և False` հակառակ դեպքում։ Խնդիրը իրականացնել հնարավորինս օպտիմալ եղանակով
+
+def is_power_of_four(n):
+    if n ==1 or n > 0 and bin(n).count("1") == 1 and (bin(n)[bin(n).index("1"):].count("0"))%2 == 0:
+        return True
+    return False
+
+
+# filter ներդրված ֆունկցիան ստանում է երկու արգումենտ և վերադարձնում իտերատոր։ Եթե ֆունկցիան None է,
+# ապա վերադարձվում են միայն այն էլեմենտները, որոնք true են։ Իրականացնել filter ֆունկցիան։
+
+
+def filter(func, arg):
+    if func is None:
+        l = [i for i in arg if i]
+        return l
+
+
