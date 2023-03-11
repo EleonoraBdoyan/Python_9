@@ -37,9 +37,10 @@ def is_power_of_four(n):
 # ապա վերադարձվում են միայն այն էլեմենտները, որոնք true են։ Իրականացնել filter ֆունկցիան։
 
 
-def filter(func, arg):
+def filter(func, iterable):
     if func is None:
-        l = [i for i in arg if i]
-        return l
+      return iter([i for i in iterable if i])
+    if func is not None:
+        return iter([i for i in iterable if func(i)])
 
 
