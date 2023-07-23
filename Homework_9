@@ -44,3 +44,38 @@ def filter(func, iterable):
         return iter([i for i in iterable if func(i)])
 
 
+import unittest
+
+#pytest
+
+
+def add(a, b):
+    return a + b
+
+
+class CustomTest(unittest.TestCase):
+    def test_add_integers(self, a, b):
+        result = add(3, 5)
+        self.assertEqual(8, result)
+
+    def test_add_float_numbers(self):
+        result = add(0.1, 0.2)
+        self.assertEqual(0.3, result)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+
+# validations one letter greater 1.name Input 2. surname Input , 3. middle name
+# tel number regexex`
+# run time search
+# birth date 31.Dec.2010 inch dzevov el gri
+# email validation
+# mi hat el requarements.txt
+# freeze > requiarements.txt
+# mer anvamb branch-i mej branch enq bacum PR enq anum poor request
+# console tarberakum petq a beri anyndhat hamarnery mas mas orinak 0, 09, 094 ev ayln
+
+
+
